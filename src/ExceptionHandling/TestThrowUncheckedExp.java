@@ -14,6 +14,7 @@ public class TestThrowUncheckedExp {
     public static void main(String[] args) {
         try {
             method();
+            System.out.println("Hello World");
         }
        catch (ArithmeticException e)
        {
