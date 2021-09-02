@@ -1,7 +1,11 @@
 package ExceptionHandling;
 import java.io.IOException;
 //Exception Propagation
-// Throw with checked Expression
+// Throw with checked Expression. It is mandatory to use throw with checked expression
+// Checked expressions are checked at compile time
+//throw is used inside method to display classname stacktrace etc etc
+
+
 /*class DeviceException extends IOException{       // No need of writing this shit
     DeviceException(String str)
     {
