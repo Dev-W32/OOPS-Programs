@@ -1,7 +1,7 @@
 package ExceptionHandling;
 import java.io.IOException;
 //Exception Propagation
-
+// Throw with checked Expression
 /*class DeviceException extends IOException{       // No need of writing this shit
     DeviceException(String str)
     {
