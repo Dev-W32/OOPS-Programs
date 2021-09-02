@@ -1,6 +1,6 @@
 package ExceptionHandling;
 // Exception handling in method overriding
-
+//
 import java.io.*;
 class Parent{
     //defining method
