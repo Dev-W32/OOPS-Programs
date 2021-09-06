@@ -1,78 +1,68 @@
 package ExceptionHandlingAssgn;
 
 import java.util.Scanner;
+class Employee{
+    String DeptName,name;
+    int ID;
+    String membID;
+    public void Display(){
+        System.out.println("Name: "+this.name);
+        if (ID<10) {
+            this.membID = this.DeptName+"00"+this.ID;
+            System.out.println("Member ID: "+this.membID);
+        }
+        else{
+            this.membID = this.DeptName+"0"+this.ID;
+            System.out.println("Member ID: "+this.membID);
+        }
 
-class Exception extends RuntimeException{
-    Exception(String str)
-    {
-        super(str);
+    }
+
+}
+class DepartmentException extends Exception {
+    public DepartmentException(String e) {
+        super(e);
     }
 }
-
-public class Employee extends RuntimeException {
-    static int i;
-    String DeptName,name;
-
-    void getData(String Name, String Deptname) {
-        this.name = Name;
-        this.DeptName = Deptname;
-        if(Deptname.startsWith("CS") || Deptname.startsWith("IT") || Deptname.startsWith("EC")){
-            System.out.print("ID: "+Deptname);
-            System.out.format("%03d",i);
-            System.out.println("\n"+"Department: "+Deptname+"\n");
-        }
-            else throw new Exception("ID does not match");
+class CountException extends Exception {
+    public CountException(String e) {
+        super(e);
     }
-
-
+}
+ class ExceptionAssignment {
     public static void main(String[] args) {
-        Employee em = new Employee();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Department: 1. CS\n2. IT\n3. EC");
-        switch (sc.nextInt())
-        {
-            case 1:
-                System.out.println("CS Department");
-                for(i=1; i<=50; i++)
-                {
-                    System.out.println("Enter Name and ID");
-                    em.getData(sc.next(), sc.next().toUpperCase());
-                    System.out.println("Count ="+i+"\n");
-                    if(i>50)
-                    {
-                        throw new Exception("Count exceeded 50");
-                    }
-                }
+        Employee emp = new Employee();
+        System.out.println("Enter Name:");
+        emp.name = sc.nextLine();
+        String Department;
 
-            case 2:
-                System.out.println("IT Department");
-                for(i=1; i<=50; i++)
-                {
-                    System.out.println("Enter Name and ID");
-                    em.getData(sc.next(), sc.next().toUpperCase());
-                    System.out.println("Count ="+i+"\n");
-                    if(i>50)
-                    {
-                        throw new Exception("Count exceeded 50");
-                    }
+        try {
+            System.out.println("Enter Department Name: ");
+            Department = sc.nextLine();
+            if (Department.equals("CS")|| Department.equals("EC") || Department.equals("IT")) {
+                emp.DeptName = Department;
+            }
+ else{
+                throw new DepartmentException("Invalid Department. You can only choose between CS IT and EC");
+            }
+            try {
+                System.out.println("Enter ID: ");
+                emp.ID = sc.nextInt();
+                if (emp.ID>0&& emp.ID<=50) {
+                    emp.Display();
                 }
-
-            case 3:
-                System.out.println("EC Department");
-                for(i=1; i<=50; i++)
-                {
-                    System.out.println("Enter Name and Department. ");
-                    em.getData(sc.next(), sc.next().toUpperCase());
-                    System.out.println("Count ="+i+"\n");
-                    if(i>50)
-                    {
-                        throw new Exception("Count exceeded 50");
-                    }
+                else{
+                    throw new CountException("ID can only be between 1 to 50");
                 }
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
         }
-
-
-
+        catch(Exception e){
+            System.out.println(e);
+        }
 
     }
 }
