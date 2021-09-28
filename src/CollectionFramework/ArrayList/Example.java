@@ -1,9 +1,9 @@
-package ArrayList;
+package CollectionFramework.ArrayList;
 
 import java.util.ArrayList;
 
-class ExampleGeneric<X,Y>{  // Instead of string and int we wrote X and Y
-   X x;
+class ExampleGeneric<X,Y>{  // Instead of string and int we wrote X and Y. Generics only work with wrapper classes
+   X x; // Wrapper classes are Integer, Double, Float etc etc
    Y y;
    ExampleGeneric(X x,Y y)
    {
@@ -17,7 +17,7 @@ class ExampleGeneric<X,Y>{  // Instead of string and int we wrote X and Y
 
  class ExampleArrayListandGeneric {
     public static void main(String[] args) {
-        // ArrayList Example
+        // CollectionFramework.ArrayList Example
        ArrayList fruits = new ArrayList();
         fruits.add("Apple");
         fruits.add(23);
@@ -29,7 +29,7 @@ class ExampleGeneric<X,Y>{  // Instead of string and int we wrote X and Y
         System.out.println(fruits.set(0,"Banana")); // Replacing an element at index
         fruits.remove(2);   // Removing the element present at index
         ArrayList<String> toRemove = new ArrayList();   // Created a new arraylist
-        toRemove.add("Apple");  // Added an elemetn which needs to be removed
+        toRemove.add("Apple");  // Added an element which needs to be removed
         fruits.removeAll(toRemove); // just like venn diagram A-B we removed the parts of list which was included in toRemove as well as fruits
         System.out.println(fruits);
         System.out.println(fruits.size());  // just like .length in array

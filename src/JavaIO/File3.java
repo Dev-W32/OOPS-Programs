@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 public class File3 {
     public static void main(String[] args) {
         try {
-            FileInputStream f1 = new FileInputStream("D:\\Java Tutorial\\OOPS_Practicals\\src\\JavaIO\\test.txt");
+            FileInputStream f1 = new FileInputStream("D:\\Java Tutorial\\OOPS_Practicals\\src\\JavaIO\\testout.txt");
             int i;
             while ((i=f1.read())!=-1)
             {
@@ -19,5 +19,6 @@ public class File3 {
         {
             e.printStackTrace();
         }
+
     }
 }

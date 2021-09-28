@@ -1,7 +1,7 @@
 package JavaIO;
 
 import java.io.*;
-public class BufferedOutputStreamExample{
+public class BufferedInputStreamExample2{
     public static void main(String[] args)throws Exception {
         File obj = new File("D:\\Java Tutorial\\OOPS_Practicals\\src\\JavaIO\\testBuffInOut.txt");
 
@@ -14,12 +14,11 @@ public class BufferedOutputStreamExample{
         }
         bout.flush();
         bout.close();
-        FileInputStream fin = new FileInputStream(obj);
-        BufferedInputStream bin = new BufferedInputStream(fin);
-        while ((i=fin.read())!=-1 ) {
+
+        BufferedInputStream bin = new BufferedInputStream(new FileInputStream(obj));
+        while ((i=bin.read())!=-1 ) {
             System.out.print((char)i);
         }
-        fin.close();
         bin.close();
 
     }

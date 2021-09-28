@@ -1,4 +1,4 @@
-package ArrayList.Assignment9;
+package CollectionFramework.PracticeAssignment;
 
 // Write a program to perform flowing operations on arraylist.
 //a. Read all elements of arraylist using iterator.
