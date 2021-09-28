@@ -1,0 +1,15 @@
+Lily  30 permanent
+ Perks: 5000
+
+Robin  35 adhoc
+ Perks: 1000
+
+Barney  38 adhoc
+ Perks: 1000
+
+Marshal  72 permanent
+ Perks: 5000
+
+Ted  75 permanent
+ Perks: 5000
+

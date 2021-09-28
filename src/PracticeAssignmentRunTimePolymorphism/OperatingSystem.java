@@ -33,7 +33,7 @@ class Dos extends OperatingSystem {
 class Windows extends Dos {
     static void display()
     {
-        System.out.println("DOS");
+        System.out.println("Windows");
     }
     void feature() {
 
